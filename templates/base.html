@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AntreanFinal</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>AntreanFinal</h1>
+      <p>Sistem antrean sederhana — cantik & interaktif</p>
+    </div>
+  </header>
+  <nav class="nav">
+    <a href="/" class="nav-item">Home</a>
+    <a href="/" class="nav-item">Tambah Antrian</a>
+    <a href="/lihat" class="nav-item">Lihat Antrian</a>
+    <a href="/panggil" class="nav-item">Panggil Antrian</a>
+  </nav>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Popup call -->
+  <div id="callPopup" class="call-popup" aria-hidden="true">
+    <div class="call-inner">
+      <div class="label">Sedang Dipanggil</div>
+      <div id="callCode" class="call-code">P001</div>
+      <div id="callName" class="call-name">Nama</div>
+      <button onclick="closeCall()" class="close-btn">Tutup</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

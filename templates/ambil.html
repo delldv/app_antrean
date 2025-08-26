@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card center">
+  <h2>Nomor Anda</h2>
+  <div class="big-code">{{ ticket.code }}</div>
+  <div class="muted">Nama: {{ ticket.name }}</div>
+  <a href="/" class="btn small">Kembali</a>
+  <a href="/lihat" class="btn small ghost">Lihat Antrian</a>
+</div>
+{% endblock %}

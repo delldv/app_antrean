@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card center">
+  <h2>Kontrol Panggil</h2>
+  <form method="post" id="callForm">
+    <button type="submit" class="btn primary">Panggil Berikutnya</button>
+  </form>
+  <div id="currentCall" class="current-call">
+    {% if ticket %}
+      <div class="big-code">{{ ticket.code }}</div>
+      <div class="muted">Nama: {{ ticket.name }}</div>
+    {% else %}
+      <p class="muted">Tidak ada antrean saat ini.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

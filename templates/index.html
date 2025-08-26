@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Ambil Nomor</h2>
+  <form action="/ambil" method="post" id="formAmbil">
+    <input type="text" name="name" id="name" placeholder="Ketik nama Anda..." required>
+    <button class="btn">Ambil Nomor</button>
+  </form>
+  <p class="muted">Setelah ambil, kamu akan lihat nomor antreanmu.</p>
+</div>
+{% endblock %}

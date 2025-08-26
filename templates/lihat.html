@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card">
+  <h2>Daftar Antrian ({{ queue|length }})</h2>
+  {% if queue %}
+    <ol class="queue-list">
+      {% for t in queue %}
+        <li><span class="code">{{ t.code }}</span> <span class="name">{{ t.name }}</span></li>
+      {% endfor %}
+    </ol>
+    <form id="resetForm" method="post" action="/api/reset" onsubmit="return resetConfirm(event)">
+      <button type="submit" class="btn danger">Reset Antrean</button>
+    </form>
+  {% else %}
+    <p class="muted">Belum ada antrean.</p>
+  {% endif %}
+</div>
+{% endblock %}
